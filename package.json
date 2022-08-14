@@ -1,0 +1,90 @@
+{
+  "name": "cra-template-react-boat",
+  "version": "0.1.2",
+  "license": "MIT",
+  "homepage": "https://yaolx.github.io/react-boat",
+  "engines": {
+    "yarn": ">=1.22.10",
+    "node": ">=14.18.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "serve": "concurrently \"yarn json-server\"  \"yarn ws\" \"yarn vite preview\"",
+    "mock": "concurrently \"yarn json-server\"  \"yarn ws\" \"yarn start:mock\"",
+    "start:mock": "vite -m mock",
+    "start:test": "vite -m test",
+    "start:production": "vite -m production",
+    "build": "tsc && vite build",
+    "build:test": "tsc && vite build -m test",
+    "build:production": "tsc && vite build -m production",
+    "json-server": "json-server json_server_mock/db.json --watch --port 3001",
+    "lint": "tsc && eslint src/",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "ws": "node server/app.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --cache --fix",
+      "git add"
+    ],
+    "src/**/*.{js,jsx}": [
+      "eslint --cache --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "ahooks": "^3.7.0",
+    "antd": "^4.16.13",
+    "axios": "^0.23.0",
+    "classnames": "^2.3.1",
+    "express": "^4.18.1",
+    "lodash": "^4.17.21",
+    "mobx": "^6.3.5",
+    "mobx-react": "^7.2.0",
+    "nodejs-websocket": "^1.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.2.2",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-eslint": "^8.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^16.11.0",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-legacy": "^2.0.1",
+    "@vitejs/plugin-react": "^2.0.1",
+    "c8": "^7.12.0",
+    "concurrently": "^7.3.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.0.1",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "4.3.8",
+    "json-server": "^0.17.0",
+    "less": "^4.1.2",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "^18.2.0",
+    "rollup": "^2.77.2",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "terser": "^5.14.2",
+    "typescript": "^4.3.2",
+    "vconsole": "^3.14.6",
+    "vite": "^3.0.7",
+    "vite-plugin-compression": "^0.3.5",
+    "vite-plugin-style-import": "^1.2.1",
+    "vitest": "^0.21.1"
+  }
+}
