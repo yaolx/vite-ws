@@ -11,7 +11,7 @@ const wss = new SocketServer({ server })
 
 wss.on('connection', (ws) => {
   // 连接成功
-  console.log('Client connected')
+  console.log('链接成功')
 
   //接收消息
   ws.on('message', (data) => {

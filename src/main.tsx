@@ -3,13 +3,11 @@ import { HashRouter } from 'react-router-dom'
 
 import { Provider } from 'mobx-react'
 import ReactDom from 'react-dom/client'
-import VConsole from 'vconsole'
 
 import Router from '@/routes'
 import globalStore from '@/store/global'
 import './index.less'
 
-new VConsole()
 const stores = {
   globalStore
 }
